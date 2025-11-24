@@ -4,25 +4,32 @@ import './Navbar.css';
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
       const sections = ['home', 'about', 'experience', 'skills', 'projects', 'contact'];
-      const current = sections.find(section => {
-        const element = document.getElementById(section);
+      let currentSection = 'home';
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const element = document.getElementById(sections[i]);
         if (element) {
           const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
+          // Check if section is in viewport (accounting for navbar height)
+          if (rect.top <= 150) {
+            currentSection = sections[i];
+            break;
+          }
         }
-        return false;
-      });
-
-      if (current) {
-        setActiveSection(current);
       }
+
+      setActiveSection(currentSection);
     };
+
+    // Initial call
+    handleScroll();
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -31,8 +38,19 @@ const Navbar = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      if (sectionId === 'home') {
+        // For home section, scroll to the very top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        // For other sections, use scrollIntoView which respects scroll-padding-top
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+      setMobileMenuOpen(false);
     }
+  };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
   };
 
   return (
@@ -42,7 +60,17 @@ const Navbar = () => {
           <span className="logo-text">RH</span>
         </div>
 
-        <ul className="navbar-menu">
+        <button
+          className={`hamburger ${mobileMenuOpen ? 'active' : ''}`}
+          onClick={toggleMobileMenu}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul className={`navbar-menu ${mobileMenuOpen ? 'mobile-active' : ''}`}>
           {['home', 'about', 'experience', 'skills', 'projects', 'contact'].map((item) => (
             <li key={item}>
               <button
