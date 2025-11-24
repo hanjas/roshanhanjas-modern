@@ -20,11 +20,16 @@
 
   /* Smooth scrolling */
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 
   /* Font rendering */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-padding-top: 80px;
 }
 
 body {
