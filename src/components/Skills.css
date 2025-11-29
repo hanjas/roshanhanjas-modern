@@ -1,6 +1,6 @@
 .skills {
   padding: 6rem 0;
-  background: linear-gradient(180deg, #0a0a14 0%, #16213e 100%);
+  background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-light) 100%);
 }
 
 .skills-container {
@@ -17,26 +17,26 @@
 }
 
 .skill-category {
-  background: rgba(102, 126, 234, 0.05);
-  border: 1px solid rgba(102, 126, 234, 0.1);
+  background: rgba(0, 240, 255, 0.05);
+  border: 1px solid rgba(0, 240, 255, 0.1);
   border-radius: 12px;
   padding: 2rem;
   transition: all 0.3s ease;
 }
 
 .skill-category:hover {
-  background: rgba(102, 126, 234, 0.08);
-  border-color: rgba(102, 126, 234, 0.3);
+  background: rgba(0, 240, 255, 0.08);
+  border-color: rgba(0, 240, 255, 0.3);
   transform: translateY(-5px);
 }
 
 .category-title {
   font-size: 1.3rem;
-  color: #667eea;
+  color: var(--primary-color);
   font-weight: 700;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 2px solid rgba(102, 126, 234, 0.2);
+  border-bottom: 2px solid rgba(0, 240, 255, 0.2);
 }
 
 .skills-list {
@@ -59,26 +59,26 @@
 
 .skill-name {
   font-size: 1rem;
-  color: #ffffff;
+  color: var(--text-primary);
   font-weight: 500;
 }
 
 .skill-percentage {
   font-size: 0.9rem;
-  color: #667eea;
+  color: var(--primary-color);
   font-weight: 600;
 }
 
 .skill-bar {
   height: 8px;
-  background: rgba(102, 126, 234, 0.1);
+  background: rgba(0, 240, 255, 0.1);
   border-radius: 10px;
   overflow: hidden;
 }
 
 .skill-progress {
   height: 100%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   border-radius: 10px;
   transition: width 1s ease-out;
   animation: progressAnimation 1.5s ease-out;
@@ -91,8 +91,8 @@
 }
 
 .competencies-section {
-  background: rgba(102, 126, 234, 0.05);
-  border: 1px solid rgba(102, 126, 234, 0.1);
+  background: rgba(0, 240, 255, 0.05);
+  border: 1px solid rgba(0, 240, 255, 0.1);
   border-radius: 12px;
   padding: 2.5rem;
   text-align: center;
@@ -100,7 +100,7 @@
 
 .competencies-title {
   font-size: 1.5rem;
-  color: #ffffff;
+  color: var(--text-primary);
   font-weight: 700;
   margin-bottom: 2rem;
 }
@@ -113,9 +113,9 @@
 }
 
 .competency-tag {
-  background: rgba(102, 126, 234, 0.1);
-  border: 1px solid rgba(102, 126, 234, 0.3);
-  color: #ffffff;
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  color: var(--text-primary);
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
   font-size: 0.95rem;
@@ -125,8 +125,8 @@
 }
 
 .competency-tag:hover {
-  background: rgba(102, 126, 234, 0.2);
-  border-color: #667eea;
+  background: rgba(0, 240, 255, 0.2);
+  border-color: var(--primary-color);
   transform: translateY(-2px);
 }
 

@@ -7,13 +7,15 @@
   padding: 1.5rem 0;
   transition: all 0.3s ease;
   background: transparent;
+  border-bottom: 1px solid transparent;
 }
 
 .navbar.scrolled {
-  background: rgba(10, 10, 20, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(5, 8, 16, 0.92);
+  backdrop-filter: blur(20px);
   padding: 1rem 0;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--grid-color);
+  box-shadow: 0 4px 30px rgba(0, 240, 255, 0.05);
 }
 
 .navbar-container {
@@ -30,12 +32,12 @@
 }
 
 .logo-text {
+  font-family: 'JetBrains Mono', monospace;
   font-size: 1.8rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary-color);
+  text-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+  letter-spacing: -0.05em;
 }
 
 .navbar-menu {
@@ -49,38 +51,57 @@
 .nav-link {
   background: none;
   border: none;
-  color: #a0a0a0;
-  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
   padding: 0.5rem 1rem;
   transition: all 0.3s ease;
   position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.nav-link::before {
+  content: '>';
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  color: var(--primary-color);
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   width: 0;
-  height: 2px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  height: 1px;
+  background: var(--primary-color);
+  box-shadow: 0 0 8px var(--primary-color);
   transition: width 0.3s ease;
 }
 
 .nav-link:hover {
-  color: #ffffff;
+  color: var(--primary-color);
+  padding-left: 1.5rem;
+}
+
+.nav-link:hover::before {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .nav-link:hover::after,
 .nav-link.active::after {
-  width: 80%;
+  width: 100%;
 }
 
 .nav-link.active {
-  color: #ffffff;
+  color: var(--primary-color);
 }
 
 /* Hamburger Menu */
@@ -97,10 +118,10 @@
 
 .hamburger span {
   width: 25px;
-  height: 3px;
-  background: #ffffff;
+  height: 2px;
+  background: var(--primary-color);
   transition: all 0.3s ease;
-  border-radius: 3px;
+  box-shadow: 0 0 10px var(--primary-color);
 }
 
 .hamburger.active span:nth-child(1) {
@@ -127,14 +148,15 @@
     width: 70%;
     max-width: 300px;
     height: 100vh;
-    background: rgba(10, 10, 20, 0.98);
-    backdrop-filter: blur(10px);
+    background: rgba(5, 8, 16, 0.98);
+    backdrop-filter: blur(20px);
+    border-left: 1px solid var(--grid-color);
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
     transition: right 0.3s ease;
-    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+    box-shadow: -5px 0 30px rgba(0, 240, 255, 0.1);
     z-index: 1000;
   }
 

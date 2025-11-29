@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import ParticleNetwork from './ParticleNetwork';
 import './Hero.css';
 
 const Hero = () => {
@@ -22,6 +23,7 @@ const Hero = () => {
       <div className="hero-background">
         <div className="gradient-bg"></div>
         <div className="grid-lines"></div>
+        <ParticleNetwork />
       </div>
 
       <div className="hero-container">

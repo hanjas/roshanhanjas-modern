@@ -1,3 +1,4 @@
+import { Zap, Award, Code2, TrendingUp } from 'lucide-react';
 import './About.css';
 
 const About = () => {
@@ -37,25 +38,33 @@ const About = () => {
 
           <div className="about-highlights">
             <div className="highlight-card">
-              <div className="highlight-icon">🚀</div>
+              <div className="highlight-icon">
+                <Zap size={40} strokeWidth={2} />
+              </div>
               <h3>Innovation Driven</h3>
               <p>Building AI-powered solutions with GenAI and LangChain</p>
             </div>
 
             <div className="highlight-card">
-              <div className="highlight-icon">💼</div>
+              <div className="highlight-icon">
+                <Award size={40} strokeWidth={2} />
+              </div>
               <h3>Industry Expert</h3>
               <p>7+ years in fintech and payment systems</p>
             </div>
 
             <div className="highlight-card">
-              <div className="highlight-icon">🛠️</div>
+              <div className="highlight-icon">
+                <Code2 size={40} strokeWidth={2} />
+              </div>
               <h3>Full-Stack Developer</h3>
               <p>End-to-end development with modern tech stack</p>
             </div>
 
             <div className="highlight-card">
-              <div className="highlight-icon">📊</div>
+              <div className="highlight-icon">
+                <TrendingUp size={40} strokeWidth={2} />
+              </div>
               <h3>Scalable Solutions</h3>
               <p>Microservices & event-driven architectures</p>
             </div>
