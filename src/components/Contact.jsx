@@ -1,21 +1,22 @@
+import { Mail, Phone, MapPin, Linkedin, Github, PenTool } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
   const contactInfo = [
     {
-      icon: '📧',
+      icon: <Mail size={32} strokeWidth={2} />,
       label: 'Email',
       value: 'roshan.hanjas@gmail.com',
       link: 'mailto:roshan.hanjas@gmail.com'
     },
     {
-      icon: '📱',
+      icon: <Phone size={32} strokeWidth={2} />,
       label: 'Phone',
       value: '+971 551192984',
       link: 'tel:+971551192984'
     },
     {
-      icon: '📍',
+      icon: <MapPin size={32} strokeWidth={2} />,
       label: 'Location',
       value: 'Al Qusis, Dubai, UAE',
       link: null
@@ -26,17 +27,17 @@ const Contact = () => {
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/roshan-hanjas/',
-      icon: '💼'
+      icon: <Linkedin size={28} strokeWidth={2} />
     },
     {
       name: 'GitHub',
       url: 'https://github.com/hanjas',
-      icon: '💻'
+      icon: <Github size={28} strokeWidth={2} />
     },
     {
       name: 'Medium',
       url: 'https://hanjas.medium.com/',
-      icon: '📝'
+      icon: <PenTool size={28} strokeWidth={2} />
     }
   ];
 
